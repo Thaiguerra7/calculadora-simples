@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Calculadora Simples</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #f4f4f9;
+    }
+    .calc {
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    input {
+      width: 100px;
+      padding: 8px;
+      margin: 5px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+    button {
+      padding: 10px;
+      margin: 5px;
+      border: none;
+      border-radius: 8px;
+      background: #4CAF50;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #45a049;
+    }
+    h3 {
+      margin-top: 15px;
+    }
+  </style>
+</head>
+<body>
+  <div class="calc">
+    <h2>Calculadora</h2>
+    <input id="num1" type="number" placeholder="Número 1">
+    <input id="num2" type="number" placeholder="Número 2">
+    <br><br>
+    <button onclick="calcular('+')">+</button>
+    <button onclick="calcular('-')">-</button>
+    <button onclick="calcular('*')">*</button>
+    <button onclick="calcular('/')">/</button>
+    <h3>Resultado: <span id="resultado"></span></h3>
+  </div>
+
+  <script>
+    function calcular(operacao) {
+      let n1 = parseFloat(document.getElementById("num1").value);
+      let n2 = parseFloat(document.getElementById("num2").value);
+      let resultado = "";
+
+      if (isNaN(n1) || isNaN(n2)) {
+        resultado = "Digite dois números!";
+      } else {
+        if (operacao === "+") resultado = n1 + n2;
+        if (operacao === "-") resultado = n1 - n2;
+        if (operacao === "*") resultado = n1 * n2;
+        if (operacao === "/") resultado = n2 !== 0 ? (n1 / n2).toFixed(2) : "Erro: divisão por 0";
+      }
+
+      document.getElementById("resultado").innerText = resultado;
+    }
+  </script>
+</body>
+</html>
