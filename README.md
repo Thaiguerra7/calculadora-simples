@@ -25,11 +25,7 @@ calculadora-web/
 - Somar ➕  
 - Subtrair ➖  
 - Multiplicar ✖  
-- Dividir ➗ (com tratamento de erro para divisão por 0)  
-
-## 📸 Demonstração
-*(adicione aqui um print da calculadora quando publicar no GitHub Pages)*  
-
+- Dividir ➗ (com tratamento de erro para divisão por 0) 
 ---
 
 ### 📌 Autor
